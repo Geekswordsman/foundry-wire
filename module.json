@@ -5,12 +5,16 @@
     "authors": [
         {
             "name": "Tero Parvinen (Whistler#3253)"
+        },
+        {
+            "name": "Geekswordsman",
+            "discord": "@geekswordsman"
         }
     ],
-    "version": "0.10.12",
+    "version": "0.10.13",
     "compatibility": {
         "minimum": 10,
-        "verified": 10
+        "verified": 11
     },
     "relationships": {
         "systems": [{
@@ -52,8 +56,8 @@
             "path": "lang/en.json"
         }
     ],
-    "url": "https://github.com/teroparvinen/foundry-wire",
-    "bugs": "https://github.com/teroparvinen/foundry-wire/issues",
-    "manifest": "https://github.com/teroparvinen/foundry-wire/releases/latest/download/module.json",
-    "download": "https://github.com/teroparvinen/foundry-wire/releases/latest/download/module.zip"
+    "url": "https://github.com/geekswordsman/foundry-wire",
+    "bugs": "https://github.com/geekswordsman/foundry-wire/issues",
+    "manifest": "https://github.com/geekswordsman/foundry-wire/releases/latest/download/module.json",
+    "download": "https://github.com/geekswordsman/foundry-wire/releases/latest/download/module.zip"
 }

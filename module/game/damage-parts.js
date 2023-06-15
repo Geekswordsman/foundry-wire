@@ -361,9 +361,10 @@ export class DamageParts {
 
         const traits = actor.system.traits;
         const isMagical = isAttackMagical(item);
-        const nmi = [...traits.di.value].includes("physical") && !isMagical;
-        const nmr = [...traits.dr.value].includes("physical") && !isMagical;
-        const nmv = [...traits.dv.value].includes("physical") && !isMagical;
+        const physical = ["bludgeoning", "piercing", "slashing"];
+        const nmi = [...traits.di.value].some(el => physical.includes(el)) && !isMagical;
+        const nmr = [...traits.di.value].some(el => physical.includes(el)) && !isMagical;
+        const nmv = [...traits.di.value].some(el => physical.includes(el)) && !isMagical;
 
         let damageReduction = getDamageReduction(actor);
         let reductionApplied = 0;
@@ -401,7 +402,7 @@ export class DamageParts {
             if (type === "temphp") { return { temphp: caused } };
 
             const di = traits.di.all || [...traits.di.value].includes(type) || nmi ? 0 : 1;
-            const dr = traits.dr.all || [...traits.dr.value].includes(type) || nmr ? 0.5 : 1;
+            const dr = traits.dr.all || ([...traits.dr.value].includes(type) && (physical.includes(type) && !isMagical)) || (!physical.includes(type) && [...traits.dr.value].includes(type)) || nmr ? 0.5 : 1;
             const dv = traits.dv.all || [...traits.dv.value].includes(type) || nmv ? 2 : 1;
 
             return {

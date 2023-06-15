@@ -1,5 +1,8 @@
 # Changes by version number
 
+### 0.10.13
+ - Corrected bug where damage resistance still applied to magical weapons.
+
 ### 0.10.12
 
 Module compatibility
